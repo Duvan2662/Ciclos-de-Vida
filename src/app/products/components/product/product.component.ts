@@ -9,6 +9,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
 
 
   public isProductVisible: boolean = false;
+  public currentPrice:number = 10;
 
   constructor(){
     console.log('Constructor');
@@ -24,7 +25,7 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
 
   }
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewInit');
+    console.log('ngAfterViewChecked');
 
   }
   ngOnDestroy(): void {
@@ -47,5 +48,11 @@ export class ProductComponent implements OnInit, OnChanges, DoCheck, AfterConten
   ngOnInit(): void {
     console.log('ngOnInit');
   }
+
+
+  public increasePrice = ():void => {
+    this.currentPrice++;
+  }
+
 
 }
